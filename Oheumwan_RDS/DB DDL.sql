@@ -10,15 +10,15 @@ CREATE TABLE Members (
 -- 커뮤니티 게시글 테이블 (CommunityPosts)
 CREATE TABLE CommunityPosts (
   post_id INT PRIMARY KEY,          -- 게시글 번호
-  title VARCHAR(100) NOT NULL,      -- 게시글 제목
   author_id INT,                    -- 게시글 작성자의 회원 번호
   content TEXT,                     -- 게시글 내용
+  image_path VARCHAR(100),          -- 이미지 경로
   creation_date DATETIME NOT NULL,  -- 게시글 작성 일시
   views INT DEFAULT 0,              -- 조회수
   FOREIGN KEY (author_id) REFERENCES Members(member_id) -- 외래 키: 작성자는 회원 테이블의 회원 번호 참조
 );
 
---댓글 테이블 (Comments)
+-- 댓글 테이블 (Comments)
 CREATE TABLE Comments (
   comment_id INT PRIMARY KEY,       -- 댓글 번호
   post_id INT,                      -- 댓글이 달린 게시글 번호
@@ -29,7 +29,7 @@ CREATE TABLE Comments (
   FOREIGN KEY (author_id) REFERENCES Members(member_id)     -- 외래 키: 작성자는 회원 테이블의 회원 번호 참조
 );
 
---재료 테이블 (Ingredients)
+-- 재료 테이블 (Ingredients)
 CREATE TABLE Ingredients (
   owner_id INT,                     -- 재료 소유자의 회원 번호
   ingredient_id INT PRIMARY KEY,    -- 재료 번호
@@ -38,7 +38,7 @@ CREATE TABLE Ingredients (
   FOREIGN KEY (owner_id) REFERENCES Members(member_id) -- 외래 키: 소유자는 회원 테이블의 회원 번호 참조
 );
 
---레시피 테이블 (Recipes)
+-- 레시피 테이블 (Recipes)
 CREATE TABLE Recipes (
   owner_id INT,                     -- 레시피 소유자의 회원 번호
   recipe_id INT PRIMARY KEY,        -- 레시피 번호
