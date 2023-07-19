@@ -2,7 +2,7 @@
 
 This API allows users to create community posts.
 
-Endpoint: POST /community/posts
+Endpoint: POST /community
 
 ### JSON Request Example:
 ```json
