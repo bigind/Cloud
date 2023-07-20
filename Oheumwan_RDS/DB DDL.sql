@@ -1,7 +1,7 @@
 -- 회원 테이블 (Members)
 CREATE TABLE Members (
   member_id INT PRIMARY KEY,        -- 회원 번호
-  nickname VARCHAR(50) NOT NULL,    -- 회원 닉네임
+  username VARCHAR(50) NOT NULL,    -- 회원 닉네임
   password VARCHAR(50) NOT NULL,    -- 회원 비밀번호
   email VARCHAR(100) NOT NULL,      -- 회원 이메일
   registration_date DATETIME NOT NULL -- 회원 가입 일시
@@ -9,7 +9,7 @@ CREATE TABLE Members (
 
 -- 커뮤니티 게시글 테이블 (CommunityPosts)
 CREATE TABLE CommunityPosts (
-  post_id INT PRIMARY KEY,          -- 게시글 번호
+  post_id INT AUTO_INCREMENT PRIMARY KEY,          -- 게시글 번호
   author_id INT,                    -- 게시글 작성자의 회원 번호
   content TEXT,                     -- 게시글 내용
   image_path VARCHAR(100),          -- 이미지 경로
