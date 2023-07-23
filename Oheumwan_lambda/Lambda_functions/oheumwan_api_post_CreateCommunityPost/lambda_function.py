@@ -3,10 +3,6 @@ import pymysql
 from datetime import datetime
 
 # RDS 정보
-rds_host = ""
-user_name = ""
-user_password = ""
-db_name = ""
 
 def lambda_handler(event, context):
     # RDS 연결 설정
@@ -23,7 +19,6 @@ def lambda_handler(event, context):
     username = event['username']
     content = event['content']
     image_path = event['image_path']
-    creation_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # 회원 조회 및 author_id 추출
     select_member_query = f"SELECT member_id FROM Members WHERE username = '{username}'"
@@ -48,7 +43,7 @@ def lambda_handler(event, context):
 
     # 게시글 삽입 쿼리
     insert_query = f"INSERT INTO CommunityPosts (author_id, content, image_path, creation_date, views) " \
-                   f"VALUES ({author_id}, '{content}', '{image_path}', '{creation_date}', 0)"
+                   f"VALUES ({author_id}, '{content}', '{image_path}', NOW(), 0)"
 
     # RDS에 게시글 삽입
     try:
