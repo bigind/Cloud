@@ -1,4 +1,4 @@
-## API: CreateCommunityPost
+## API: ReadCommunityByUse
 
 This API allows users to create community posts.
 
