@@ -1,6 +1,6 @@
 ## API: CreateCommunityPost
 
-This API allows users to create community posts.
+포스트를 생성하는 API 입니다.
 
 Endpoint: POST /community
 
@@ -25,3 +25,15 @@ Endpoint: POST /community
 - `400 Bad Request`: 올바르지 않은 요청 매개변수입니다.
 - `404 Not Found`: 요청에서 지정한 사용자명이 존재하지 않습니다.
 - `500 Internal Server Error`: 요청 처리 중 오류가 발생했습니다.
+
+## axios
+```js
+axios.post(apiEndpoint, {
+    username: "user1",
+    content: initialContent,
+    image_path: fileName,
+    post_id: 1
+}).then(res => {
+  console.log(res);
+}).catch(err => console.log(err))
+```
