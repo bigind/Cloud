@@ -1,6 +1,6 @@
 ## API: ReadCommunityByUse
 
-This API allows users to create community posts.
+사용자의 포스트를 가져오는 API 입니다.
 
 Endpoint: GET /community
 
