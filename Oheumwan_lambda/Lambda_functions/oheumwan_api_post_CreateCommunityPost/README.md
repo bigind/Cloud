@@ -32,7 +32,6 @@ axios.post(apiEndpoint, {
     username: "user1",
     content: initialContent,
     image_path: fileName,
-    post_id: 1
 }).then(res => {
   console.log(res);
 }).catch(err => console.log(err))
