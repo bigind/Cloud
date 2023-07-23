@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
+import json
 import boto3
 import botocore
 import os
@@ -130,7 +131,11 @@ def get_image():
         result_dict = match_food_with_numbers(labels)
 
         print("[LOG] : 성공적으로 처리되었습니다.")
-        return jsonify(result_dict), 200
+        return {
+          'statusCode': 200,
+          'body': json.dumps(result_dict, ensure_ascii=False)
+        }
+        
     else:
         return "No image URL provided.", 400
 
