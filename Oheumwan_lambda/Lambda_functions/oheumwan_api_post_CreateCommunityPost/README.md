@@ -15,9 +15,9 @@ Endpoint: POST /community
 
 #### Parameters:
 
-- `username` (string): The username of the author.
-- `content` (string): The content of the post.
-- `image_path` (string): The path of the image associated with the post.
+- `username` (string): 사용자 아이디.
+- `content` (string): 생성할 포스트 내용.
+- `image_path` (string): 이미지 경로.
 
 ## Responses:
 
